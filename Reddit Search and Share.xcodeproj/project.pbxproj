@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42E3AC0272314F32A30B2212 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 049165BA3C69407E906846E1 /* libPods.a */; };
 		50443E2718B96FEF00879698 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50443E2618B96FEF00879698 /* Foundation.framework */; };
 		50443E2918B96FEF00879698 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50443E2818B96FEF00879698 /* CoreGraphics.framework */; };
 		50443E2B18B96FEF00879698 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50443E2A18B96FEF00879698 /* UIKit.framework */; };
@@ -14,13 +15,23 @@
 		50443E3318B96FEF00879698 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 50443E3218B96FEF00879698 /* main.m */; };
 		50443E3718B96FEF00879698 /* RSSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50443E3618B96FEF00879698 /* RSSAppDelegate.m */; };
 		50443E3A18B96FEF00879698 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50443E3818B96FEF00879698 /* Main.storyboard */; };
-		50443E3D18B96FEF00879698 /* RSSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50443E3C18B96FEF00879698 /* RSSViewController.m */; };
 		50443E3F18B96FEF00879698 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50443E3E18B96FEF00879698 /* Images.xcassets */; };
 		50443E4618B96FEF00879698 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50443E4518B96FEF00879698 /* XCTest.framework */; };
 		50443E4718B96FEF00879698 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50443E2618B96FEF00879698 /* Foundation.framework */; };
 		50443E4818B96FEF00879698 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50443E2A18B96FEF00879698 /* UIKit.framework */; };
 		50443E5018B96FEF00879698 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50443E4E18B96FEF00879698 /* InfoPlist.strings */; };
 		50443E5218B96FEF00879698 /* Reddit_Search_and_ShareTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 50443E5118B96FEF00879698 /* Reddit_Search_and_ShareTests.m */; };
+		50443E5E18B971FC00879698 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 50443E5C18B971FC00879698 /* Model.xcdatamodeld */; };
+		50443E7218B97F4500879698 /* RSSFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50443E7118B97F4500879698 /* RSSFeedViewController.m */; };
+		50443E7A18B97FA700879698 /* RSSBaseRequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 50443E7918B97FA700879698 /* RSSBaseRequestHandler.m */; };
+		50443E7F18B9819E00879698 /* RSSSubredditRequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 50443E7E18B9819E00879698 /* RSSSubredditRequestHandler.m */; };
+		50443E8818B9854000879698 /* RSSPostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50443E8718B9854000879698 /* RSSPostCell.m */; };
+		50443E8B18B9865500879698 /* RedditPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 50443E8A18B9865500879698 /* RedditPost.m */; };
+		50443E8E18B9867900879698 /* RSSRedditPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 50443E8D18B9867900879698 /* RSSRedditPost.m */; };
+		50443E9118B9869F00879698 /* RSSFavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50443E9018B9869F00879698 /* RSSFavoritesViewController.m */; };
+		50443E9618B99A7000879698 /* RSSDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 50443E9518B99A7000879698 /* RSSDataHelper.m */; };
+		50443E9718B9C0A100879698 /* bebasneue.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50443E5B18B970BE00879698 /* bebasneue.ttf */; };
+		50443E9A18B9C1B500879698 /* PreviousSubredditSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 50443E9918B9C1B500879698 /* PreviousSubredditSearch.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		049165BA3C69407E906846E1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		50443E2318B96FEF00879698 /* Reddit Search and Share.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reddit Search and Share.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50443E2618B96FEF00879698 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		50443E2818B96FEF00879698 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -45,14 +57,34 @@
 		50443E3518B96FEF00879698 /* RSSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSSAppDelegate.h; sourceTree = "<group>"; };
 		50443E3618B96FEF00879698 /* RSSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSSAppDelegate.m; sourceTree = "<group>"; };
 		50443E3918B96FEF00879698 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		50443E3B18B96FEF00879698 /* RSSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSSViewController.h; sourceTree = "<group>"; };
-		50443E3C18B96FEF00879698 /* RSSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSSViewController.m; sourceTree = "<group>"; };
 		50443E3E18B96FEF00879698 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		50443E4418B96FEF00879698 /* Reddit Search and ShareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Reddit Search and ShareTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50443E4518B96FEF00879698 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		50443E4D18B96FEF00879698 /* Reddit Search and ShareTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Reddit Search and ShareTests-Info.plist"; sourceTree = "<group>"; };
 		50443E4F18B96FEF00879698 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		50443E5118B96FEF00879698 /* Reddit_Search_and_ShareTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Reddit_Search_and_ShareTests.m; sourceTree = "<group>"; };
+		50443E5B18B970BE00879698 /* bebasneue.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = bebasneue.ttf; sourceTree = "<group>"; };
+		50443E5D18B971FC00879698 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		50443E7018B97F4500879698 /* RSSFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSFeedViewController.h; sourceTree = "<group>"; };
+		50443E7118B97F4500879698 /* RSSFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSFeedViewController.m; sourceTree = "<group>"; };
+		50443E7818B97FA700879698 /* RSSBaseRequestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSBaseRequestHandler.h; sourceTree = "<group>"; };
+		50443E7918B97FA700879698 /* RSSBaseRequestHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSBaseRequestHandler.m; sourceTree = "<group>"; };
+		50443E7B18B97FBF00879698 /* RSSRequestDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSSRequestDelegate.h; sourceTree = "<group>"; };
+		50443E7D18B9819E00879698 /* RSSSubredditRequestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSSubredditRequestHandler.h; sourceTree = "<group>"; };
+		50443E7E18B9819E00879698 /* RSSSubredditRequestHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSSubredditRequestHandler.m; sourceTree = "<group>"; };
+		50443E8618B9854000879698 /* RSSPostCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSPostCell.h; sourceTree = "<group>"; };
+		50443E8718B9854000879698 /* RSSPostCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSPostCell.m; sourceTree = "<group>"; };
+		50443E8918B9865500879698 /* RedditPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedditPost.h; sourceTree = "<group>"; };
+		50443E8A18B9865500879698 /* RedditPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedditPost.m; sourceTree = "<group>"; };
+		50443E8C18B9867900879698 /* RSSRedditPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSRedditPost.h; sourceTree = "<group>"; };
+		50443E8D18B9867900879698 /* RSSRedditPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSRedditPost.m; sourceTree = "<group>"; };
+		50443E8F18B9869F00879698 /* RSSFavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RSSFavoritesViewController.h; path = "Reddit Search and Share/RSSFavoritesViewController.h"; sourceTree = "<group>"; };
+		50443E9018B9869F00879698 /* RSSFavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RSSFavoritesViewController.m; path = "Reddit Search and Share/RSSFavoritesViewController.m"; sourceTree = "<group>"; };
+		50443E9418B99A7000879698 /* RSSDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSDataHelper.h; sourceTree = "<group>"; };
+		50443E9518B99A7000879698 /* RSSDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSDataHelper.m; sourceTree = "<group>"; };
+		50443E9818B9C1B500879698 /* PreviousSubredditSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreviousSubredditSearch.h; sourceTree = "<group>"; };
+		50443E9918B9C1B500879698 /* PreviousSubredditSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreviousSubredditSearch.m; sourceTree = "<group>"; };
+		FDD299334A9A4BFCA4BFC562 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +95,7 @@
 				50443E2918B96FEF00879698 /* CoreGraphics.framework in Frameworks */,
 				50443E2B18B96FEF00879698 /* UIKit.framework in Frameworks */,
 				50443E2718B96FEF00879698 /* Foundation.framework in Frameworks */,
+				42E3AC0272314F32A30B2212 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +119,7 @@
 				50443E4B18B96FEF00879698 /* Reddit Search and ShareTests */,
 				50443E2518B96FEF00879698 /* Frameworks */,
 				50443E2418B96FEF00879698 /* Products */,
+				FDD299334A9A4BFCA4BFC562 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +139,7 @@
 				50443E2818B96FEF00879698 /* CoreGraphics.framework */,
 				50443E2A18B96FEF00879698 /* UIKit.framework */,
 				50443E4518B96FEF00879698 /* XCTest.framework */,
+				049165BA3C69407E906846E1 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -114,9 +149,14 @@
 			children = (
 				50443E3518B96FEF00879698 /* RSSAppDelegate.h */,
 				50443E3618B96FEF00879698 /* RSSAppDelegate.m */,
+				50443E8C18B9867900879698 /* RSSRedditPost.h */,
+				50443E8D18B9867900879698 /* RSSRedditPost.m */,
+				50443E9418B99A7000879698 /* RSSDataHelper.h */,
+				50443E9518B99A7000879698 /* RSSDataHelper.m */,
 				50443E3818B96FEF00879698 /* Main.storyboard */,
-				50443E3B18B96FEF00879698 /* RSSViewController.h */,
-				50443E3C18B96FEF00879698 /* RSSViewController.m */,
+				50443E7C18B97FC400879698 /* Requests */,
+				50443E7318B97F4A00879698 /* Feed */,
+				50443E7718B97F8500879698 /* Favorites */,
 				50443E3E18B96FEF00879698 /* Images.xcassets */,
 				50443E2D18B96FEF00879698 /* Supporting Files */,
 			);
@@ -126,6 +166,12 @@
 		50443E2D18B96FEF00879698 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				50443E5C18B971FC00879698 /* Model.xcdatamodeld */,
+				50443E9818B9C1B500879698 /* PreviousSubredditSearch.h */,
+				50443E9918B9C1B500879698 /* PreviousSubredditSearch.m */,
+				50443E8918B9865500879698 /* RedditPost.h */,
+				50443E8A18B9865500879698 /* RedditPost.m */,
+				50443E5B18B970BE00879698 /* bebasneue.ttf */,
 				50443E2E18B96FEF00879698 /* Reddit Search and Share-Info.plist */,
 				50443E2F18B96FEF00879698 /* InfoPlist.strings */,
 				50443E3218B96FEF00879698 /* main.m */,
@@ -152,6 +198,39 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		50443E7318B97F4A00879698 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				50443E7018B97F4500879698 /* RSSFeedViewController.h */,
+				50443E7118B97F4500879698 /* RSSFeedViewController.m */,
+				50443E8618B9854000879698 /* RSSPostCell.h */,
+				50443E8718B9854000879698 /* RSSPostCell.m */,
+			);
+			name = Feed;
+			sourceTree = "<group>";
+		};
+		50443E7718B97F8500879698 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				50443E8F18B9869F00879698 /* RSSFavoritesViewController.h */,
+				50443E9018B9869F00879698 /* RSSFavoritesViewController.m */,
+			);
+			name = Favorites;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		50443E7C18B97FC400879698 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				50443E7B18B97FBF00879698 /* RSSRequestDelegate.h */,
+				50443E7818B97FA700879698 /* RSSBaseRequestHandler.h */,
+				50443E7918B97FA700879698 /* RSSBaseRequestHandler.m */,
+				50443E7D18B9819E00879698 /* RSSSubredditRequestHandler.h */,
+				50443E7E18B9819E00879698 /* RSSSubredditRequestHandler.m */,
+			);
+			name = Requests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -159,9 +238,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 50443E5518B96FEF00879698 /* Build configuration list for PBXNativeTarget "Reddit Search and Share" */;
 			buildPhases = (
+				E46E8D50BCB84C85A818CB19 /* Check Pods Manifest.lock */,
 				50443E1F18B96FEF00879698 /* Sources */,
 				50443E2018B96FEF00879698 /* Frameworks */,
 				50443E2118B96FEF00879698 /* Resources */,
+				734337D7A29D4786BFE5DCFD /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -229,6 +310,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50443E9718B9C0A100879698 /* bebasneue.ttf in Resources */,
 				50443E3F18B96FEF00879698 /* Images.xcassets in Resources */,
 				50443E3118B96FEF00879698 /* InfoPlist.strings in Resources */,
 				50443E3A18B96FEF00879698 /* Main.storyboard in Resources */,
@@ -245,14 +327,56 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		734337D7A29D4786BFE5DCFD /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E46E8D50BCB84C85A818CB19 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		50443E1F18B96FEF00879698 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				50443E3318B96FEF00879698 /* main.m in Sources */,
-				50443E3D18B96FEF00879698 /* RSSViewController.m in Sources */,
 				50443E3718B96FEF00879698 /* RSSAppDelegate.m in Sources */,
+				50443E9618B99A7000879698 /* RSSDataHelper.m in Sources */,
+				50443E7218B97F4500879698 /* RSSFeedViewController.m in Sources */,
+				50443E8B18B9865500879698 /* RedditPost.m in Sources */,
+				50443E5E18B971FC00879698 /* Model.xcdatamodeld in Sources */,
+				50443E7F18B9819E00879698 /* RSSSubredditRequestHandler.m in Sources */,
+				50443E8818B9854000879698 /* RSSPostCell.m in Sources */,
+				50443E7A18B97FA700879698 /* RSSBaseRequestHandler.m in Sources */,
+				50443E9A18B9C1B500879698 /* PreviousSubredditSearch.m in Sources */,
+				50443E8E18B9867900879698 /* RSSRedditPost.m in Sources */,
+				50443E9118B9869F00879698 /* RSSFavoritesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +500,7 @@
 		};
 		50443E5618B96FEF00879698 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDD299334A9A4BFCA4BFC562 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -389,6 +514,7 @@
 		};
 		50443E5718B96FEF00879698 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDD299334A9A4BFCA4BFC562 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -461,6 +587,7 @@
 				50443E5718B96FEF00879698 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		50443E5818B96FEF00879698 /* Build configuration list for PBXNativeTarget "Reddit Search and ShareTests" */ = {
 			isa = XCConfigurationList;
@@ -469,8 +596,22 @@
 				50443E5A18B96FEF00879698 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		50443E5C18B971FC00879698 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				50443E5D18B971FC00879698 /* Model.xcdatamodel */,
+			);
+			currentVersion = 50443E5D18B971FC00879698 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 50443E1B18B96FEF00879698 /* Project object */;
 }

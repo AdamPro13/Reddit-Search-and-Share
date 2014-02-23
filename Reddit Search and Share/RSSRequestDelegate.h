@@ -1,13 +1,13 @@
 //
-//  RSSViewController.h
+//  RSSRequestDelegate.h
 //  Reddit Search and Share
 //
 //  Created by Adam Proschek on 2/22/14.
 //  Copyright (c) 2014 Adam Proschek. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@protocol RSSRequestDelegate <NSObject>
 
-@interface RSSViewController : UIViewController
+- (void)requestEndedWithData:(id)data forRequest:(NSString *)requestUrl;
 
 @end

@@ -7,12 +7,15 @@
 //
 
 #import "RSSAppDelegate.h"
+#import "CoreData+MagicalRecord.h"
 
 @implementation RSSAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"RedditSearchAndShare.sqlite"];
+    
     return YES;
 }
 							
