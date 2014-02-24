@@ -10,10 +10,12 @@
 #import "RSSSubredditRequestHandler.h"
 #import "RSSPostCell.h"
 #import "RSSRedditPost.h"
+#import "RSSDataHelper.h"
 
 @interface RSSFeedViewController ()
 
 @property (nonatomic, strong) NSArray *posts;
+@property (nonatomic, strong) NSArray *previousSearches;
 @property (nonatomic, strong) RSSSubredditRequestHandler *handler;
 
 @end
@@ -32,10 +34,14 @@
 - (void)awakeFromNib
 {
     if (self)
-    {   
+    {
         searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 320, 70)];
         searchBar.delegate = self;
         searchBar.showsScopeBar= YES;
+        searchBar.placeholder = @"Search for a Subreddit here...";
+        searchBar.searchBarStyle = UISearchBarStyleDefault;
+        searchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
+        searchBar.autocorrectionType = UITextAutocorrectionTypeNo;
         
         searchDisplayController = [[UISearchDisplayController alloc] initWithSearchBar:searchBar contentsController:self];
         searchDisplayController.delegate = self;
@@ -55,7 +61,12 @@
 
     self.handler = [RSSSubredditRequestHandler handlerForSender:self];
     [self.handler sendRequest];
-    self.edgesForExtendedLayout = UIRectEdgeTop;
+    [self setUpUI];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    self.previousSearches = [RSSDataHelper getPreviousSearches];
 }
 
 - (void)didReceiveMemoryWarning
@@ -81,7 +92,14 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.posts count];
+    if (tableView == self.tableView)
+    {
+        return [self.posts count];
+    }
+    else
+    {
+        return [searchData count];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -94,14 +112,85 @@
         cell = [[RSSPostCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
     }
     
-    [cell setCellForRedditPost:[self.posts objectAtIndex:indexPath.row]];
+    if (tableView == self.tableView)
+    {
+        [cell setCellForRedditPost:[self.posts objectAtIndex:indexPath.row]];
+    }
+    else
+    {
+        cell.textLabel.text = [[searchData objectAtIndex:indexPath.row] name];
+    }
     
     return cell;
 }
 
+#pragma mark - Table view delegate
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    RSSPostCell *cell = (RSSPostCell *)[tableView cellForRowAtIndexPath:indexPath];
+    if (tableView == self.tableView)
+    {
+        if (cell.isFavorited)
+        {
+            [cell unfavoriteCell];
+            [RSSDataHelper deletePost:cell.post.savedPost];
+        }
+        else
+        {
+            [cell favoriteCell];
+            cell.post.savedPost = [RSSDataHelper createPostForRedditPost:cell.post];
+        }
+    }
+    else
+    {
+        [self searchForSubreddit:cell.textLabel.text];
+    }
     
+    [cell setSelected:NO animated:YES];
+}
+
+#pragma mark - Search delegate
+
+- (void)filterContentForSearchText:(NSString *)searchText
+{
+    [searchData removeAllObjects];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.name contains[c] %@", searchText];
+    searchData = [NSMutableArray arrayWithArray:[self.previousSearches filteredArrayUsingPredicate:predicate]];
+}
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    [self filterContentForSearchText:searchString];
+    
+    return YES;
+}
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption
+{
+    [self filterContentForSearchText:self.searchDisplayController.searchBar.text];
+    
+    return YES;
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    [self searchForSubreddit:searchBar.text];
+}
+
+- (void)searchForSubreddit:(NSString *)subredditName
+{
+    [RSSDataHelper saveSearch:subredditName];
+    [self.handler setUpRequestForSubreddit:subredditName];
+    [self.handler sendRequest];
+    [searchDisplayController setActive:NO animated:YES];
+}
+
+#pragma mark - Helper methods
+
+- (void)setUpUI
+{
+    self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg"]];
 }
 
 @end

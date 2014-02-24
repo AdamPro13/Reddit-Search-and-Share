@@ -10,6 +10,7 @@
 
 @interface RSSPostCell : UITableViewCell
 
+@property BOOL isFavorited;
 @property (nonatomic, strong) RSSRedditPost *post;
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *authorLabel;
@@ -18,5 +19,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *favoriteStarImage;
 
 - (void)setCellForRedditPost:(RSSRedditPost *)post;
+- (void)favoriteCell;
+- (void)unfavoriteCell;
 
 @end

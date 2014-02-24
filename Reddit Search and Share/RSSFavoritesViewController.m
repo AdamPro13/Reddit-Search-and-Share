@@ -9,6 +9,7 @@
 #import "RSSFavoritesViewController.h"
 #import "RSSDataHelper.h"
 #import "RedditPost.h"
+#import "RSSFavoritePostCell.h"
 
 @interface RSSFavoritesViewController ()
 
@@ -30,11 +31,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self setUpUI];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     self.posts = [RSSDataHelper getFavoritePosts];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,27 +61,40 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    RSSFavoritePostCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if (cell == nil)
+    {
+        cell = [[RSSFavoritePostCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+    }
+    
+    [cell setUpCellForPost:[self.posts objectAtIndex:indexPath.row]];
     
     return cell;
 }
 
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return YES;
+    RSSFavoritePostCell *cell = (RSSFavoritePostCell *)[tableView cellForRowAtIndexPath:indexPath];
+    [self presentActivityControllerForPost:cell];
+    [cell setSelected:NO animated:YES];
 }
 
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)setUpUI
 {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        RedditPost *postToDelete = [self.posts objectAtIndex:indexPath.row];
-        [RSSDataHelper deletePost:postToDelete];
-        
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }
+    self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg"]];
+}
+
+- (void)presentActivityControllerForPost:(RSSFavoritePostCell *)postCell
+{
+    NSString *shareString = postCell.post.title;
+    UIImage *shareImage = postCell.thumbnailImage.image;
+    NSArray *activityItems = [NSArray arrayWithObjects:shareString, shareImage, nil];
+    
+    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
+    activityViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    
+    [self presentViewController:activityViewController animated:YES completion:nil];
 }
 
 @end

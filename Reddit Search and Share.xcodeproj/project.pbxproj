@@ -32,6 +32,7 @@
 		50443E9618B99A7000879698 /* RSSDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 50443E9518B99A7000879698 /* RSSDataHelper.m */; };
 		50443E9718B9C0A100879698 /* bebasneue.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50443E5B18B970BE00879698 /* bebasneue.ttf */; };
 		50443E9A18B9C1B500879698 /* PreviousSubredditSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 50443E9918B9C1B500879698 /* PreviousSubredditSearch.m */; };
+		50443E9D18B9CB4D00879698 /* RSSFavoritePostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50443E9C18B9CB4D00879698 /* RSSFavoritePostCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,8 @@
 		50443E9518B99A7000879698 /* RSSDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSDataHelper.m; sourceTree = "<group>"; };
 		50443E9818B9C1B500879698 /* PreviousSubredditSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreviousSubredditSearch.h; sourceTree = "<group>"; };
 		50443E9918B9C1B500879698 /* PreviousSubredditSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreviousSubredditSearch.m; sourceTree = "<group>"; };
+		50443E9B18B9CB4D00879698 /* RSSFavoritePostCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSFavoritePostCell.h; sourceTree = "<group>"; };
+		50443E9C18B9CB4D00879698 /* RSSFavoritePostCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSFavoritePostCell.m; sourceTree = "<group>"; };
 		FDD299334A9A4BFCA4BFC562 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -149,8 +152,6 @@
 			children = (
 				50443E3518B96FEF00879698 /* RSSAppDelegate.h */,
 				50443E3618B96FEF00879698 /* RSSAppDelegate.m */,
-				50443E8C18B9867900879698 /* RSSRedditPost.h */,
-				50443E8D18B9867900879698 /* RSSRedditPost.m */,
 				50443E9418B99A7000879698 /* RSSDataHelper.h */,
 				50443E9518B99A7000879698 /* RSSDataHelper.m */,
 				50443E3818B96FEF00879698 /* Main.storyboard */,
@@ -167,6 +168,8 @@
 			isa = PBXGroup;
 			children = (
 				50443E5C18B971FC00879698 /* Model.xcdatamodeld */,
+				50443E8C18B9867900879698 /* RSSRedditPost.h */,
+				50443E8D18B9867900879698 /* RSSRedditPost.m */,
 				50443E9818B9C1B500879698 /* PreviousSubredditSearch.h */,
 				50443E9918B9C1B500879698 /* PreviousSubredditSearch.m */,
 				50443E8918B9865500879698 /* RedditPost.h */,
@@ -212,6 +215,8 @@
 		50443E7718B97F8500879698 /* Favorites */ = {
 			isa = PBXGroup;
 			children = (
+				50443E9B18B9CB4D00879698 /* RSSFavoritePostCell.h */,
+				50443E9C18B9CB4D00879698 /* RSSFavoritePostCell.m */,
 				50443E8F18B9869F00879698 /* RSSFavoritesViewController.h */,
 				50443E9018B9869F00879698 /* RSSFavoritesViewController.m */,
 			);
@@ -367,6 +372,7 @@
 			files = (
 				50443E3318B96FEF00879698 /* main.m in Sources */,
 				50443E3718B96FEF00879698 /* RSSAppDelegate.m in Sources */,
+				50443E9D18B9CB4D00879698 /* RSSFavoritePostCell.m in Sources */,
 				50443E9618B99A7000879698 /* RSSDataHelper.m in Sources */,
 				50443E7218B97F4500879698 /* RSSFeedViewController.m in Sources */,
 				50443E8B18B9865500879698 /* RedditPost.m in Sources */,

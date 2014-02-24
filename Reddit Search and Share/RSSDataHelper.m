@@ -9,6 +9,7 @@
 #import "RSSDataHelper.h"
 #import "CoreData+MagicalRecord.h"
 #import "RedditPost.h"
+#import "PreviousSubredditSearch.h"
 #import "RSSRedditPost.h"
 
 @implementation RSSDataHelper
@@ -56,6 +57,24 @@
     NSArray *posts = [RedditPost MR_findAllSortedBy:@"createdDate" ascending:YES];
     
     return posts;
+}
+
++ (NSArray *)getPreviousSearches
+{
+    NSArray *searches = [PreviousSubredditSearch MR_findAllSortedBy:@"name" ascending:YES];
+    
+    return searches;
+}
+
++ (PreviousSubredditSearch *)saveSearch:(NSString *)searchString
+{
+    NSManagedObjectContext *context = [NSManagedObjectContext MR_contextForCurrentThread];
+    PreviousSubredditSearch *search = [PreviousSubredditSearch MR_createInContext:context];
+    search.name = searchString;
+    
+    [context MR_saveToPersistentStoreAndWait];
+    
+    return search;
 }
 
 @end

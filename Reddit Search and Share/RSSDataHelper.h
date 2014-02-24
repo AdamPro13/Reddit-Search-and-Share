@@ -8,6 +8,7 @@
 
 @class RedditPost;
 @class RSSRedditPost;
+@class PreviousSubredditSearch;
 
 @interface RSSDataHelper : NSObject
 
@@ -15,5 +16,7 @@
 + (RedditPost *)getPostForPostId:(NSString *)postId;
 + (void)deletePost:(RedditPost *)post;
 + (NSArray *)getFavoritePosts;
++ (NSArray *)getPreviousSearches;
++ (PreviousSubredditSearch *)saveSearch:(NSString *)searchString;
 
 @end
