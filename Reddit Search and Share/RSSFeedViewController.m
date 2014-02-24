@@ -35,15 +35,15 @@
 {
     if (self)
     {
-        searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 320, 70)];
-        searchBar.delegate = self;
-        searchBar.showsScopeBar= YES;
-        searchBar.placeholder = @"Search for a Subreddit here...";
-        searchBar.searchBarStyle = UISearchBarStyleDefault;
-        searchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
-        searchBar.autocorrectionType = UITextAutocorrectionTypeNo;
+        subredditSearchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 320, 70)];
+        subredditSearchBar.delegate = self;
+        subredditSearchBar.showsScopeBar= YES;
+        subredditSearchBar.placeholder = @"Search for a Subreddit here...";
+        subredditSearchBar.searchBarStyle = UISearchBarStyleDefault;
+        subredditSearchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
+        subredditSearchBar.autocorrectionType = UITextAutocorrectionTypeNo;
         
-        searchDisplayController = [[UISearchDisplayController alloc] initWithSearchBar:searchBar contentsController:self];
+        searchDisplayController = [[UISearchDisplayController alloc] initWithSearchBar:subredditSearchBar contentsController:self];
         searchDisplayController.delegate = self;
         searchDisplayController.searchResultsDataSource = self;
         searchDisplayController.searchResultsDelegate = self;
@@ -51,13 +51,18 @@
         
         searchDisplayController.searchResultsTableView.backgroundColor = [UIColor whiteColor];
         
-        self.tableView.tableHeaderView = searchBar;
+        self.tableView.tableHeaderView = subredditSearchBar;
     }
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = refreshControl;
+    [self refresh:self.refreshControl];
 
     self.handler = [RSSSubredditRequestHandler handlerForSender:self];
     [self.handler sendRequest];
@@ -191,6 +196,12 @@
 - (void)setUpUI
 {
     self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg"]];
+}
+
+- (void)refresh:(id)sender
+{
+    [self.handler sendRequest];
+    [(UIRefreshControl *)sender endRefreshing];
 }
 
 @end

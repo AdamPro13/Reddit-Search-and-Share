@@ -11,7 +11,7 @@
 @interface RSSFeedViewController : UITableViewController <RSSRequestDelegate, UISearchBarDelegate, UISearchDisplayDelegate>
 {
     NSMutableArray *searchData;
-    UISearchBar *searchBar;
+    UISearchBar *subredditSearchBar;
     UISearchDisplayController *searchDisplayController;
 }
 
